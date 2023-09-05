@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter App</title>
+  </head>
+  <body>
+    <h1>Counter: <span id="counter">0</span></h1>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+
+      socket.on("updateCount", (count) => {
+        document.getElementById("counter").textContent = count;
+      });
+    </script>
+  </body>
+</html>
